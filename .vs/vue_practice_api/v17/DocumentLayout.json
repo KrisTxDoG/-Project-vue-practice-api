@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\CY_VueTemplate\\vue_practice_project\\vue_practice_api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2454B00E-3BD2-4BA3-BEA8-F7E5097501E0}|vue_practice_api\\vue_practice_api.csproj|d:\\cy_vuetemplate\\vue_practice_project\\vue_practice_api\\vue_practice_api\\vue_practice_api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{2454B00E-3BD2-4BA3-BEA8-F7E5097501E0}|vue_practice_api\\vue_practice_api.csproj|solutionrelative:vue_practice_api\\vue_practice_api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2454B00E-3BD2-4BA3-BEA8-F7E5097501E0}|vue_practice_api\\vue_practice_api.csproj|d:\\cy_vuetemplate\\vue_practice_project\\vue_practice_api\\vue_practice_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2454B00E-3BD2-4BA3-BEA8-F7E5097501E0}|vue_practice_api\\vue_practice_api.csproj|solutionrelative:vue_practice_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "vue_practice_api.http",
+              "DocumentMoniker": "D:\\CY_VueTemplate\\vue_practice_project\\vue_practice_api\\vue_practice_api\\vue_practice_api.http",
+              "RelativeDocumentMoniker": "vue_practice_api\\vue_practice_api.http",
+              "ToolTip": "D:\\CY_VueTemplate\\vue_practice_project\\vue_practice_api\\vue_practice_api\\vue_practice_api.http",
+              "RelativeToolTip": "vue_practice_api\\vue_practice_api.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-07-16T03:51:31.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\CY_VueTemplate\\vue_practice_project\\vue_practice_api\\vue_practice_api\\appsettings.json",
+              "RelativeDocumentMoniker": "vue_practice_api\\appsettings.json",
+              "ToolTip": "D:\\CY_VueTemplate\\vue_practice_project\\vue_practice_api\\vue_practice_api\\appsettings.json",
+              "RelativeToolTip": "vue_practice_api\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvw4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-16T03:51:24.299Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
