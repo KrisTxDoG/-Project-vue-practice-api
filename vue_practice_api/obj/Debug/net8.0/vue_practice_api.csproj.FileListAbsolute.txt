@@ -409,3 +409,11 @@ D:\CY_VueTemplate\vue_practice_project\vue_practice_api\vue_practice_api\obj\Deb
 D:\CY_VueTemplate\vue_practice_project\vue_practice_api\vue_practice_api\obj\Debug\net8.0\vue_practice_api.pdb
 D:\CY_VueTemplate\vue_practice_project\vue_practice_api\vue_practice_api\obj\Debug\net8.0\vue_practice_api.genruntimeconfig.cache
 D:\CY_VueTemplate\vue_practice_project\vue_practice_api\vue_practice_api\obj\Debug\net8.0\ref\vue_practice_api.dll
+D:\CY_VueTemplate\vue_practice_project\vue_practice_api\vue_practice_api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\CY_VueTemplate\vue_practice_project\vue_practice_api\vue_practice_api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\CY_VueTemplate\vue_practice_project\vue_practice_api\vue_practice_api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\CY_VueTemplate\vue_practice_project\vue_practice_api\vue_practice_api\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\CY_VueTemplate\vue_practice_project\vue_practice_api\vue_practice_api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+D:\CY_VueTemplate\vue_practice_project\vue_practice_api\vue_practice_api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+D:\CY_VueTemplate\vue_practice_project\vue_practice_api\vue_practice_api\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\CY_VueTemplate\vue_practice_project\vue_practice_api\vue_practice_api\obj\Debug\net8.0\vue_practice_api.sourcelink.json

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("vue_practice_api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4f4e89c4eae50237c1ff66421360ef81ba5231d")]
 [assembly: System.Reflection.AssemblyProductAttribute("vue_practice_api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("vue_practice_api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
