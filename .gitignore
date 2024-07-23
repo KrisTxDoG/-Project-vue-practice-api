@@ -6,3 +6,9 @@
 .vs/vue_practice_api/FileContentIndex/aa7672da-f5ec-4987-ac54-caf94cd3f8d8.vsidx
 .vs/vue_practice_api/FileContentIndex/fc9e26ee-3cf7-421c-a4b2-674fd34b8714.vsidx
 .vs/vue_practice_api/FileContentIndex/fc9b1235-3c91-44cb-9f36-4f60996aaf11.vsidx
+
+# 忽略 bin 資料夾及其所有內容
+bin/
+obj/
+/vue_practice_api/Controllers/AccountController.cs
+/vue_practice_api/vue_practice_api.csproj
