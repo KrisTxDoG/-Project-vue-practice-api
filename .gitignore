@@ -12,3 +12,6 @@ bin/
 obj/
 /vue_practice_api/Controllers/AccountController.cs
 /vue_practice_api/vue_practice_api.csproj
+.vs/vue_practice_api/FileContentIndex/5f4d8539-9569-4de0-90a3-147bfea81d34.vsidx
+.vs/vue_practice_api/FileContentIndex/7cb4e303-8d25-47fb-b1be-a2a429b16ee4.vsidx
+.vs/vue_practice_api/FileContentIndex/cbd431f5-1459-4b9e-ae8a-789e5684f3db.vsidx

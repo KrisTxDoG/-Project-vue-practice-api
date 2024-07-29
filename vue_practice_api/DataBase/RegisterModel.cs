@@ -1,4 +1,6 @@
-﻿namespace vue_practice_api.DataBase
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace vue_practice_api.DataBase
 {
     public class RegisterModel
     {

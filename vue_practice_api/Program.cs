@@ -27,6 +27,9 @@ builder.Services.AddCors(options =>
         .AllowAnyMethod());
 });
 
+// 添加角色和用戶種子服務
+builder.Services.AddScoped<DataSeeder>();
+
 // Configure Identity
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
@@ -67,8 +70,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// user CORS policy
-app.UseCors("AllowSpecificOrigin");
+// Seed role and users 
+using (var scope = app.Services.CreateScope())
+{
+    var seeder = scope.ServiceProvider.GetRequiredService<DataSeeder>();
+    await seeder.SeedRolesAndUsersAsync();
+}
+
+    // user CORS policy
+    app.UseCors("AllowSpecificOrigin");
 
 app.UseHttpsRedirection();
 

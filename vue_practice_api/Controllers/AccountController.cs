@@ -37,6 +37,8 @@ namespace vue_practice_api.Controllers
 
             if (result.Succeeded)
             {
+                // 根據需要分配角色
+                await _userManager.AddToRoleAsync(user, "User");
                 return Ok("註冊成功");
             }
 
@@ -69,14 +71,17 @@ namespace vue_practice_api.Controllers
             return Unauthorized();
         }
 
-        private string GenerateJwtToken(string email, IdentityUser user)
+        private async Task<string> GenerateJwtToken(string email, IdentityUser user)
         {
-            var claims = new[]
+            var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Sub, email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(ClaimTypes.NameIdentifier, user.Id)
             };
+
+            var roles = await _userManager.GetRolesAsync(user);
+            claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtKey"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

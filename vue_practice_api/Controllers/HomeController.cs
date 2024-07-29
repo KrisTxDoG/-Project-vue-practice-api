@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Security.Claims;
 
 namespace vue_practice_api.Controllers
 {
+    [Authorize(Roles = "User")]
     [Route("api/[controller]")]
     [ApiController]
     public class HomeController : ControllerBase
@@ -37,6 +40,15 @@ namespace vue_practice_api.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+
+        // 受保護的端點
+        [Authorize]
+        [HttpGet("protected")]
+        public ActionResult<string> GetProtected()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            return $"This is protected data for user {userId}";
         }
     }
 }
