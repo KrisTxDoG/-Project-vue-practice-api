@@ -77,8 +77,8 @@ using (var scope = app.Services.CreateScope())
     await seeder.SeedRolesAndUsersAsync();
 }
 
-    // user CORS policy
-    app.UseCors("AllowSpecificOrigin");
+// user CORS policy
+app.UseCors("AllowSpecificOrigin");
 
 app.UseHttpsRedirection();
 

@@ -63,7 +63,7 @@ namespace vue_practice_api.Controllers
             if (result.Succeeded)
             {
                 var appUser = _userManager.Users.SingleOrDefault(r => r.Email == model.Email);
-                var token = GenerateJwtToken(model.Email, appUser);
+                var token = await GenerateJwtToken(model.Email, appUser);
 
                 return Ok(new { token, userName = appUser.UserName });
             }
