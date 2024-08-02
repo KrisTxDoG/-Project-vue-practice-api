@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using vue_practice_api.DataBase;
 
@@ -11,9 +12,11 @@ using vue_practice_api.DataBase;
 namespace vue_practice_api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240802101426_AddFileUploadsTable-1")]
+    partial class AddFileUploadsTable1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -236,7 +239,7 @@ namespace vue_practice_api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FileUploads", (string)null);
+                    b.ToTable("FileUploads");
                 });
 
             modelBuilder.Entity("vue_practice_api.DataBase.Item", b =>
@@ -257,7 +260,7 @@ namespace vue_practice_api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Items", (string)null);
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

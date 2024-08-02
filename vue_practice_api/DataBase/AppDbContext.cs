@@ -9,6 +9,8 @@ namespace vue_practice_api.DataBase
         // 定義 DbSet 屬性
         public DbSet<Item> Items { get; set; }
 
+        public DbSet<FileUploads> FileUploads { get; set; }
+
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
         {
