@@ -236,7 +236,7 @@ namespace vue_practice_api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FileUploads", (string)null);
+                    b.ToTable("FileUploads");
                 });
 
             modelBuilder.Entity("vue_practice_api.DataBase.Item", b =>
@@ -257,7 +257,7 @@ namespace vue_practice_api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Items", (string)null);
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

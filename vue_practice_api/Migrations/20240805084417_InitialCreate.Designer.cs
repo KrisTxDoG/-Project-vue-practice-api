@@ -12,8 +12,8 @@ using vue_practice_api.DataBase;
 namespace vue_practice_api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240802101426_AddFileUploadsTable-1")]
-    partial class AddFileUploadsTable1
+    [Migration("20240805084417_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
