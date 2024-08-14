@@ -38,5 +38,19 @@ namespace vue_practice_api.Controllers
 
             return BadRequest(ModelState);
         }
+
+        [HttpDelete("DeleteItem/{id}")]
+        public async Task<IActionResult> DeleteItem(int id)
+        {
+            var item = await _context.Items.FindAsync(id);
+            if(item == null)
+            {
+                return NotFound($"Item with ID {id} not found");
+            }
+
+            _context.Items.Remove(item);
+            await _context.SaveChangesAsync();
+            return Ok($"Item with ID {id} deleted");
+        }
     }
 }
