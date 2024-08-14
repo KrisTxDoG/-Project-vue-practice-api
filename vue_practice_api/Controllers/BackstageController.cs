@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using vue_practice_api.DataBase;
 
@@ -18,7 +19,9 @@ namespace vue_practice_api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetItems()
         {
-            var items = await _context.Items.ToListAsync();
+            var items = await _context.Items
+                .OrderBy(x => x.CreatedDate)
+                .ToListAsync();
             return Ok(items); // 返回 200 狀態碼和資料
         }
 
@@ -28,7 +31,8 @@ namespace vue_practice_api.Controllers
             if(ModelState.IsValid)
             {
                 // 確保 id 為 0，這樣 EF 會將它視為新的項目並讓資料庫自動生成 id
-                item.Id = 0;
+                item.Id =  Guid.NewGuid();
+                item.CreatedDate = DateTime.Now;
 
                 _context.Items.Add(item);
                 await _context.SaveChangesAsync();
@@ -40,7 +44,7 @@ namespace vue_practice_api.Controllers
         }
 
         [HttpDelete("DeleteItem/{id}")]
-        public async Task<IActionResult> DeleteItem(int id)
+        public async Task<IActionResult> DeleteItem(Guid id)
         {
             var item = await _context.Items.FindAsync(id);
             if(item == null)
@@ -51,6 +55,29 @@ namespace vue_practice_api.Controllers
             _context.Items.Remove(item);
             await _context.SaveChangesAsync();
             return Ok($"Item with ID {id} deleted");
+        }
+
+        [HttpPut("UpdateItem")]
+        public async Task<IActionResult> UpdateItem([FromBody] Item item)
+        {
+            if (ModelState.IsValid)
+            {
+                var existingItem = await _context.Items.FindAsync(item.Id);
+
+                if (existingItem == null)
+                {
+                    return NotFound();
+                }
+
+                // 更新資料
+                existingItem.Name = item.Name;
+                existingItem.Phone = item.Phone;
+
+                await _context.SaveChangesAsync();
+                return Ok(existingItem);
+            }
+            return BadRequest(ModelState);
+          
         }
     }
 }
