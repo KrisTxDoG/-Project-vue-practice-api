@@ -17,12 +17,26 @@ namespace vue_practice_api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetItems()
+        public async Task<IActionResult> GetItems(int page = 1, int pageSize = 10)
         {
+            // 確保頁碼和頁面大小為有效值
+            page = page < 1 ? 1 : page;
+            pageSize = pageSize < 1 ? 10 : pageSize;
+
+            // 獲取總的項目數量
+            var totalItems = await _context.Items.CountAsync();
+
+            // 根據頁碼和頁面大小獲取數據
             var items = await _context.Items
                 .OrderBy(x => x.CreatedDate)
+                .Skip((page -1) * pageSize)
+                .Take(pageSize)
                 .ToListAsync();
-            return Ok(items); // 返回 200 狀態碼和資料
+            return Ok(new
+            {
+                Items = items,
+                TotalItems = totalItems
+            }); 
         }
 
         [HttpPost("CreateItem")]
