@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http; // 確保引入這個命名空間來使用 IFor
 using System.IO;
 using System.Threading.Tasks;
 using vue_practice_api.DataBase;
+using vue_practice_api.DataBase.Dto;
 
 namespace vue_practice_api.Controllers
 {
@@ -67,6 +68,27 @@ namespace vue_practice_api.Controllers
             memory.Position = 0;
 
             return File(memory, "application/octet-stream", fileName);
+        }
+
+        [HttpPost("UploadFileBase64")]
+        public async Task<IActionResult> UploadFileBase64([FromBody] FileUploadDto fileUploadDto)
+        {
+            var base64String = fileUploadDto.FileDate;
+
+            // 將 Base64 字串轉換回 byte[]
+            var fileBytes = Convert.FromBase64String(base64String);
+
+            // 將這些 bytes 儲存到資料庫中
+            var DbFile = new FileUploadBase64
+            {
+                Name = "uploadedFile",     // 儲存的名稱
+                Data = fileBytes                 // 儲存到資料庫
+            };
+
+            _context.FileUploadBase64.Add(DbFile);
+            await _context.SaveChangesAsync();
+
+            return Ok();
         }
     }
 }

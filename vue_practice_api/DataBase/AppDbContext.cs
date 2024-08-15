@@ -12,6 +12,8 @@ namespace vue_practice_api.DataBase
         public DbSet<FileUploads> FileUploads { get; set; }
         public DbSet<ProductModel> ProductModels { get; set; }
 
+        public DbSet<FileUploadBase64> FileUploadBase64 { get; set; }
+
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
         {
